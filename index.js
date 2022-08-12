@@ -117,7 +117,7 @@ function startStopCountdown(){
         return;
     }
 
-    if(!timerRunning){
+    else if(!timerRunning){
         timerRunning = true;
         startCountdown();
     } else{
