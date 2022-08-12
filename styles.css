@@ -1,0 +1,33 @@
+body{
+    background-image: url("img/jungle.jpg");
+}
+
+.container{
+    opacity: 0.8;
+}
+
+.circle{
+    height: 35vh;
+    width: 35vh;
+    border: solid 3px white;
+}
+
+@media screen and (min-width: 750px) {
+    .timer-wrapper{
+        margin-top: 25vh;
+        height: 50vh;
+    }
+}
+
+button{
+    border: none;
+}
+
+.subheader{
+    margin: 0
+}
+
+p{
+    margin: 0rem;
+    padding: 0rem;
+}
