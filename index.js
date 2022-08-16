@@ -1,17 +1,21 @@
 
 //global time variables
-let breakSecondsLeft = 8;
+let breakSecondsLeft = 60;
 let interval;
 let breakInterval;
-let secondsLeft = 8;
+let secondsLeft = 300;
 let intervalLength;
 let breakIntervalLength;
 let executedTime = false;
+let executedBreak = false;
 let timerRunning = false;
 let breakRunning = false;
+let breakPause = false;
 let resetSeconds = secondsLeft;
 let resetBreakSeconds = breakSecondsLeft;
 let soundFile;
+const audio = document.getElementById("audio");
+
 
 function init() {
     updateBreak();
@@ -84,7 +88,9 @@ function updateBreak(){
 function startCountdown() {
 
     timerRunning = true;
+    unmute();
     changeColorTimer();
+    
     
    if(!executedTime){
     intervalLength = secondsLeft;
@@ -113,12 +119,16 @@ function stopCountdown(){
 
 function startStopCountdown(){
 
-    if(breakRunning){
-        return;
+    
+    if(breakRunning && !breakPause){
+        stopBreak();
     }
-
+    
+    else if(breakPause){
+        console.log("break starts")
+        breakTime();
+    }
     else if(!timerRunning){
-        timerRunning = true;
         startCountdown();
     } else{
         timerRunning = false;
@@ -138,11 +148,16 @@ function endCountdown(){
 
 function breakTime(){
 
+    if(!executedBreak){
+        breakIntervalLength = breakSecondsLeft;
+        executedBreak = true;
+       }
+
     breakRunning = true;
+    breakPause = false;
     changeColorBreak();
     playAudio();
 
-    breakIntervalLength = breakSecondsLeft; 
 
     breakInterval = setInterval(()=>{
         breakSecondsLeft--;
@@ -169,6 +184,7 @@ function endBreak(){
 function resetTimer(){
     timerRunning = false;
     breakRunning = false;
+    mute();
     changeColorBreak();
     changeColorTimer();
     secondsLeft = resetSeconds;
@@ -180,12 +196,10 @@ function resetTimer(){
 }
 
 function playAudio(){
-    const animalNoise = document.getElementById("audio");
-    //console.log("test sound")
-    animalNoise.src = "http://soundbible.com/mp3/Red_stag_roar-Juan_Carlos_-2004708707.mp3"
-    animalNoise.load();
-    animalNoise.play();
-    
+    let randomIndex = Math.floor(Math.random() * SOUNDS.length);
+    audio.src = SOUNDS[randomIndex];
+    audio.load();
+    audio.play();
 }
 
 function changeColorTimer(){
@@ -212,4 +226,20 @@ function changeColorBreak(){
         document.getElementById("break-label").style.fontSize = "1rem";
     }
     
+}
+
+function mute(){
+    audio.muted = true;
+}
+
+function unmute(){
+    audio.muted = false;
+}
+
+function stopBreak(){
+    console.log("test")
+    breakPause = true;
+ 
+    clearInterval(breakInterval)
+    updateTime();
 }
