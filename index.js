@@ -1,9 +1,9 @@
 
 //global time variables
-let breakSecondsLeft = 60;
+let breakSecondsLeft = 8;
 let interval;
 let breakInterval;
-let secondsLeft = 300;
+let secondsLeft = 8;
 let intervalLength;
 let breakIntervalLength;
 let executedTime = false;
@@ -180,8 +180,12 @@ function resetTimer(){
 }
 
 function playAudio(){
-    soundFile = SOUNDS[Math.floor(Math.random()*SOUNDS.length)];
-    document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+    const animalNoise = document.getElementById("audio");
+    //console.log("test sound")
+    animalNoise.src = "http://soundbible.com/mp3/Red_stag_roar-Juan_Carlos_-2004708707.mp3"
+    animalNoise.load();
+    animalNoise.play();
+    
 }
 
 function changeColorTimer(){
