@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,142 +9,142 @@
     <link rel="stylesheet" href="styles.css">
     <title>Animalflow Exercise Timer</title>
 </head>
-
 <body>
     <script src="sounds.js"></script>
-    <audio id="audio"></audio>
-
     <div class="container my-5 text-center text-white rounded bg-dark bg-gradient">
-
-            <h2 class="font-weight-bold p-3">ANIMAL-TIMER</h2>
-            <div class="row justify-content-center font-weight-bold">
-            
-                <div class="wrapper-clock my-3">
-                    <div class="circle rounded-circle ">
-                        <div id="timer-label" class="my-5">
-                            <h6 class="subheader font-weight-bold">COUNTDOWN</h6>
-                            <p>
-                                <span id="minutes"></span>
-                                <span> : </span>
-                                <span id="seconds"></span>
-                            </p>  
-                        </div>
-                        <div id="break-label">
-                            <h6 class=" subheader font-weight-bold">BREAK</h6>
-                            <p>
-                                <span id="break-minutes"></span>
-                                <span> : </span>
-                                <span id="break-seconds"></span>
-                            </p>
-                        </div>
+        <h2 class="font-weight-bold p-3">ANIMAL-TIMER</h2>
+        <div class="row justify-content-center font-weight-bold">
+            <div class="wrapper-clock my-3">
+                <div class="circle rounded-circle ">
+                    <div id="timer-label" class="my-5">
+                        <h6 class="subheader font-weight-bold">COUNTDOWN</h6>
+                        <p>
+                            <span id="minutes"></span>
+                            <span> : </span>
+                            <span id="seconds"></span>
+                        </p>
                     </div>
-    
-                    
-                    
-                </div>
-                
-            </div>
-            <div class="row justify-content-center p-3">   
-                <div id="control-btns">
-                    <span><button type="button" id="start-pause-btn" class="btn btn-primary btn-lg" onclick="startStopCountdown()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
-                        <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
-                      </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause" viewBox="0 0 16 16">
-                        <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
-                      </svg></button></span>
-                    <span><button class="reset btn btn-danger btn-lg" onclick="resetTimer()"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
-                                <path
-                                    d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8z" />
-                                <path
-                                    d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6z" />
-                    </svg></button></span>
+                    <div id="break-label">
+                        <h6 class=" subheader font-weight-bold">BREAK</h6>
+                        <p>
+                            <span id="break-minutes"></span>
+                            <span> : </span>
+                            <span id="break-seconds"></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            
-            
-            <div class="row justify-content-center">
+        </div>
+        <div class="row justify-content-center p-3">
+            <div id="control-btns">
+                <span><button type="button" id="start-pause-btn" class="btn btn-primary btn-lg"
+                        onclick="startStopCountdown()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+                            <path
+                                d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z" />
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pause" viewBox="0 0 16 16">
+                            <path
+                                d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
+                        </svg></button></span>
+                <span><button class="reset btn btn-danger btn-lg" onclick="resetTimer()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
+                            <path
+                                d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8z" />
+                            <path
+                                d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6z" />
+                        </svg></button></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="session">
+                <div id="session-length">
+                    <h5>Session</h5>
+                </div>
+                <div class="d-flex flex-row">
 
-                <div id="session">
-                    <div id="session-length">
-                        <h5>Session</h5>
-                    </div>
-                    <div class="d-flex flex-row">
-                        
-                        <div id="minutes-label" class="p-1">
-                            <div>
-                                <h6>Min</h6>
-                            </div>
-                            <div class="d-inline"><button class="btn btn-outline-primary btn-sm" onclick="decrementMinutes()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                              </svg></button>
-                            </div>
-                            <div class="d-inline"><button class="btn btn-outline-primary btn-sm" onclick="incrementMinutes()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                              </svg></button>
-                            </div>
+                    <div id="minutes-label" class="p-1">
+                        <div>
+                            <h6>Min</h6>
                         </div>
-                        <div id="seconds-label" class="p-1">
-                            <div>
-                                <h6>Sec</h6>
-                            </div>
-                            <div class="d-inline"><button class="btn btn-outline-primary btn-sm" onclick="decrementSeconds()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                              </svg></button>
-                            </div>
-                            <div class="d-inline"><button class="btn btn-outline-primary btn-sm" onclick="incrementSeconds()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                              </svg></button>
-                            </div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="decrementMinutes()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                </svg></button>
+                        </div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="incrementMinutes()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg></button>
                         </div>
                     </div>
-                    
-                    
-    
-                </div>
-    
-                <div id="break">
-                    <div id="break-length" class="d-inline-block">
-                        <h5>Break-Time</h5>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <div id="break-minutes-label" class="p-1">
-                            <div>
-                                <h6>Min</h6>
-                            </div>
-                            <div class="d-inline"><button  class="btn btn-outline-primary btn-sm"
-                                    onclick="decrementBreakMinutes() "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                                      </svg></button></div>
-                            <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
-                                    onclick="incrementBreakMinutes()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                      </svg></button></div>
+                    <div id="seconds-label" class="p-1">
+                        <div>
+                            <h6>Sec</h6>
                         </div>
-                        <div id="break-seconds-label" class="p-1">
-                            <div>
-                                <h6>Sec</h6>
-                            </div>
-                            <div class="d-inline"><button type="button" class="btn btn-outline-primary btn-sm"
-                                    onclick="decrementBreakSeconds() "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                                      </svg></button></div>
-                            <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
-                                    onclick="incrementBreakSeconds()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                      </svg></button></div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="decrementSeconds()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                </svg></button>
+                        </div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="incrementSeconds()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg></button>
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
+            <div id="break">
+                <div id="break-length" class="d-inline-block">
+                    <h5>Break-Time</h5>
+                </div>
+                <div class="d-flex flex-row">
+                    <div id="break-minutes-label" class="p-1">
+                        <div>
+                            <h6>Min</h6>
+                        </div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="decrementBreakMinutes() "><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                </svg></button></div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="incrementBreakMinutes()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg></button></div>
+                    </div>
+                    <div id="break-seconds-label" class="p-1">
+                        <div>
+                            <h6>Sec</h6>
+                        </div>
+                        <div class="d-inline"><button type="button" class="btn btn-outline-primary btn-sm"
+                                onclick="decrementBreakSeconds() "><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                </svg></button></div>
+                        <div class="d-inline"><button class="btn btn-outline-primary btn-sm"
+                                onclick="incrementBreakSeconds()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-
-
-    
-
+    <audio id="audio"></audio>
 
     <script src="./index.js"></script>
     <!-- bootstrap -->
